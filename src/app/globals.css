@@ -1,0 +1,69 @@
+@import "tailwindcss";
+
+:root {
+  /* Core palette — extraído do site de referência (ver DESIGN.md) */
+  --color-ink: #21112e; /* plum escuro — hero/CTA/header, texto sobre creme */
+  --color-ink-2: #281631; /* variante do plum */
+  --color-cream: #f7f3eb; /* fundo padrão da página */
+  --color-surface: #fffdf8; /* cards claros */
+  --color-surface-alt: #eee7da; /* painéis secundários */
+  --color-border: #ddd5c9; /* bordas sobre creme */
+  --color-gold: #d8ad18; /* acento dourado */
+  --color-gold-dark: #a98000; /* hover do dourado */
+  --color-lavender: #efebf1; /* botão secundário claro */
+  --color-muted: #746b70; /* texto secundário */
+  --color-whatsapp: #25d366;
+
+  --radius-sm: 0.5rem;
+  --radius-md: 1rem;
+  --radius-lg: 1.25rem;
+  --radius-pill: 999px;
+
+  --shadow-gold: 0 14px 30px rgba(216, 173, 24, 0.2);
+  --shadow-soft: 0 12px 28px rgba(33, 17, 46, 0.08);
+  --shadow-float: 0 12px 28px rgba(0, 0, 0, 0.25);
+
+  --container-max: 1280px;
+}
+
+@theme inline {
+  --color-ink: var(--color-ink);
+  --color-ink-2: var(--color-ink-2);
+  --color-cream: var(--color-cream);
+  --color-surface: var(--color-surface);
+  --color-surface-alt: var(--color-surface-alt);
+  --color-border-soft: var(--color-border);
+  --color-gold: var(--color-gold);
+  --color-gold-dark: var(--color-gold-dark);
+  --color-lavender: var(--color-lavender);
+  --color-muted: var(--color-muted);
+  --color-whatsapp: var(--color-whatsapp);
+
+  --font-display: var(--font-playfair);
+  --font-sans: var(--font-dm-sans);
+
+  --radius-pill: var(--radius-pill);
+}
+
+body {
+  background: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-sans), system-ui, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display), Georgia, serif;
+}
+
+::selection {
+  background: var(--color-gold);
+  color: var(--color-ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 2px;
+}
