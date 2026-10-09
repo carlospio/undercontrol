@@ -20,6 +20,7 @@ const contactDetails = [
   {
     label: "Endereço",
     value: `${siteConfig.address.street}, ${siteConfig.address.neighborhood} — ${siteConfig.address.city}/${siteConfig.address.state}, CEP ${siteConfig.address.zipCode}`,
+    href: siteConfig.address.mapUrl,
   },
   { label: "Atendimento", value: siteConfig.businessHours },
 ];
@@ -53,7 +54,20 @@ export default function ContatoPage() {
                   <dt className="text-xs font-bold uppercase tracking-[0.14em] text-gold-dark">
                     {detail.label}
                   </dt>
-                  <dd className="mt-1 text-base text-ink">{detail.value}</dd>
+                  <dd className="mt-1 text-base text-ink">
+                    {"href" in detail ? (
+                      <a
+                        href={detail.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="underline-offset-4 hover:underline"
+                      >
+                        {detail.value}
+                      </a>
+                    ) : (
+                      detail.value
+                    )}
+                  </dd>
                 </div>
               ))}
             </dl>

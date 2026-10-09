@@ -30,6 +30,7 @@ export const siteConfig = {
     state: "SP",
     zipCode: "06454-000",
     country: "BR",
+    mapUrl: "https://share.google/FNJXidYGGcvUXICCl",
   },
   businessHours: "Segunda a sexta, das 9h às 18h",
   social: {

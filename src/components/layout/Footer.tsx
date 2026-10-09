@@ -76,7 +76,14 @@ export function Footer() {
           <div className="space-y-1">
             <p>{siteConfig.phone.display} · {siteConfig.email}</p>
             <p>
-              {siteConfig.address.street}, {siteConfig.address.neighborhood} · {siteConfig.address.city}/{siteConfig.address.state}
+              <a
+                href={siteConfig.address.mapUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-gold"
+              >
+                {siteConfig.address.street}, {siteConfig.address.neighborhood} · {siteConfig.address.city}/{siteConfig.address.state}
+              </a>
             </p>
             <p>{siteConfig.businessHours}</p>
           </div>

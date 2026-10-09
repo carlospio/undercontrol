@@ -52,6 +52,7 @@ export function LocalBusinessJsonLd() {
       postalCode: siteConfig.address.zipCode,
       addressCountry: siteConfig.address.country,
     },
+    hasMap: siteConfig.address.mapUrl,
     openingHours: "Mo-Fr 09:00-18:00",
   };
 
