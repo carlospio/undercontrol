@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";
@@ -28,7 +29,15 @@ export function AboutSection() {
             </Button>
           </div>
         </div>
-        <div className="aspect-[4/3] w-full rounded-3xl bg-surface ring-1 ring-border-soft/60" />
+        <div className="relative aspect-[4/3] w-full overflow-hidden rounded-3xl ring-1 ring-border-soft/60">
+          <Image
+            src="/images/about-team.png"
+            alt="Assistente da Under Control atendendo um cliente ao telefone"
+            fill
+            sizes="(min-width: 1024px) 45vw, 100vw"
+            className="object-cover"
+          />
+        </div>
       </Container>
     </section>
   );
