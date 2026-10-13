@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { siteConfig } from "@/lib/constants";
@@ -31,7 +32,16 @@ export function Hero() {
         </div>
 
         <div className="relative">
-          <div className="aspect-[4/5] w-full rounded-3xl bg-white/5 ring-1 ring-white/10" />
+          <div className="relative aspect-[4/5] w-full overflow-hidden rounded-3xl ring-1 ring-white/10">
+            <Image
+              src="/images/hero-assistant.png"
+              alt="Assistente remota da Under Control organizando a rotina de um executivo"
+              fill
+              priority
+              sizes="(min-width: 1024px) 45vw, 100vw"
+              className="object-cover object-[78%_center]"
+            />
+          </div>
           <div className="absolute -bottom-6 left-1/2 w-[calc(100%-2rem)] -translate-x-1/2 rounded-2xl bg-surface p-5 shadow-[0_20px_40px_rgba(0,0,0,0.25)] sm:w-72">
             <p className="font-display text-base font-semibold text-ink">
               Sua rotina, finalmente, com espaço para respirar.
