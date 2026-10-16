@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
@@ -53,7 +54,16 @@ export default function SobrePage() {
         <Container className="grid gap-12 lg:grid-cols-2">
           <div>
             <SectionHeading title="Nossa história" />
-            <p className="mt-4 text-base leading-relaxed text-muted">
+            <div className="relative mt-5 aspect-[4/5] w-full max-w-sm overflow-hidden rounded-3xl ring-1 ring-border-soft/60">
+              <Image
+                src="/images/about-juliana.jpg"
+                alt={`${siteConfig.ceo.name}, ${siteConfig.ceo.role.toLowerCase()} da Under Control`}
+                fill
+                sizes="(min-width: 1024px) 24rem, 100vw"
+                className="object-cover"
+              />
+            </div>
+            <p className="mt-6 text-base leading-relaxed text-muted">
               A Under Control nasceu em {siteConfig.foundingYear} com o objetivo de auxiliar
               empresários, empreendedores, profissionais da área da saúde e qualquer outro
               profissional, pessoa física ou jurídica, que precise delegar suas atividades

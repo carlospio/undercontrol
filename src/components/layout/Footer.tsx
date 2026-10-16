@@ -21,7 +21,7 @@ export function Footer() {
               height={150}
               className="h-9 w-auto"
             />
-            <span className="font-display text-lg font-bold text-white">UNDER CONTROL</span>
+            <span className="whitespace-nowrap font-display text-lg font-bold text-white">UNDER CONTROL</span>
           </div>
           <p className="mt-3 max-w-xs text-sm leading-relaxed text-white/70">
             {siteConfig.tagline}

@@ -24,7 +24,7 @@ export const siteConfig = {
   },
   email: "comercial@undercontroll.com.br",
   address: {
-    street: "Alameda Rio Negro, 1030",
+    street: "Al. Rio Negro, 585",
     neighborhood: "Alphaville",
     city: "Barueri",
     state: "SP",

@@ -69,7 +69,7 @@ export function Header() {
             priority
           />
           <span className="flex flex-col leading-none">
-            <span className="font-display text-lg font-bold tracking-wide text-ink">
+            <span className="whitespace-nowrap font-display text-lg font-bold tracking-wide text-ink">
               UNDER CONTROL
             </span>
             <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-gold-dark">

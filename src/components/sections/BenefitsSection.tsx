@@ -19,7 +19,7 @@ export function BenefitsSection() {
         <SectionHeading
           eyebrow="O que muda na sua rotina"
           title="Benefícios de contar com a"
-          emphasis="Under Control."
+          emphasis={"Under Control."}
           tone="light"
           align="center"
         />
