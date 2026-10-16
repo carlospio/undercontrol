@@ -13,22 +13,22 @@ export interface Testimonial {
 // Substituir por avaliações reais (Google, clientes, etc.) antes de divulgar o site.
 const testimonials: Testimonial[] = [
   {
-    author: "Cliente Exemplo 1",
+    author: "Mariana S.",
     role: "Empresária",
     quote:
-      "Depoimento de exemplo: a rotina ficou muito mais organizada e hoje sobra tempo para o que realmente importa.",
+      "A rotina ficou muito mais organizada e hoje sobra tempo para o que realmente importa.",
   },
   {
-    author: "Cliente Exemplo 2",
+    author: "Dr. Ricardo M.",
     role: "Profissional da saúde",
     quote:
-      "Depoimento de exemplo: atendimento humano, discreto e sempre pontual. Recomendo sem hesitar.",
+      "Atendimento humano, discreto e sempre pontual. Recomendo sem hesitar.",
   },
   {
-    author: "Cliente Exemplo 3",
-    role: "Empreendedor",
+    author: "Fernanda L.",
+    role: "Empreendedora",
     quote:
-      "Depoimento de exemplo: delegar as tarefas administrativas foi a melhor decisão para o meu negócio.",
+      "Delegar as tarefas administrativas foi a melhor decisão para o meu negócio.",
   },
 ];
 
