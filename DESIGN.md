@@ -68,7 +68,7 @@ Frases curtas, diretas, com um leve tom editorial/emocional ("Devolva ao seu dia
 - **Fundação:** 2020
 - **CEO:** Juliana Azevedo — ampla experiência como secretária executiva.
 - **Telefone/WhatsApp:** (11) 99927-7276 — `https://api.whatsapp.com/send?phone=5511999277276`
-- **E-mail:** undercontrol.ju@gmail.com
+- **E-mail:** comercial@undercontroll.com.br
 - **Endereço:** Alameda Rio Negro, 1030, Alphaville, Barueri/SP, CEP 06454-000
 - **Horário de atendimento:** Segunda a sexta, 09:00–18:00
 - **Instagram:** https://www.instagram.com/under_control_assistant/

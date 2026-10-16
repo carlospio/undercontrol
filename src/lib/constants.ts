@@ -22,7 +22,7 @@ export const siteConfig = {
     number: process.env.NEXT_PUBLIC_PHONE ?? "+5511999277276",
     display: "(11) 99927-7276",
   },
-  email: "undercontrol.ju@gmail.com",
+  email: "comercial@undercontroll.com.br",
   address: {
     street: "Al. Rio Negro, 585",
     neighborhood: "Alphaville",
