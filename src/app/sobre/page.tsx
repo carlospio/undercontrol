@@ -50,19 +50,20 @@ export default function SobrePage() {
         </Container>
       </section>
 
-      <section className="bg-cream py-16">
-        <Container className="grid gap-12 lg:grid-cols-2">
+      <section className="bg-cream py-16 lg:py-20">
+        <Container className="grid items-center gap-10 lg:grid-cols-[minmax(0,26rem)_1fr] lg:gap-16">
+          <div className="relative mx-auto aspect-[4/5] w-full max-w-sm overflow-hidden rounded-3xl ring-1 ring-border-soft/60 lg:mx-0 lg:max-w-none">
+            <Image
+              src="/images/about-juliana.jpg"
+              alt={`${siteConfig.ceo.name}, ${siteConfig.ceo.role.toLowerCase()} da Under Control`}
+              fill
+              sizes="(min-width: 1024px) 26rem, (min-width: 640px) 24rem, 100vw"
+              className="object-cover"
+              priority
+            />
+          </div>
           <div>
             <SectionHeading title="Nossa história" />
-            <div className="relative mt-5 aspect-[4/5] w-full max-w-sm overflow-hidden rounded-3xl ring-1 ring-border-soft/60">
-              <Image
-                src="/images/about-juliana.jpg"
-                alt={`${siteConfig.ceo.name}, ${siteConfig.ceo.role.toLowerCase()} da Under Control`}
-                fill
-                sizes="(min-width: 1024px) 24rem, 100vw"
-                className="object-cover"
-              />
-            </div>
             <p className="mt-6 text-base leading-relaxed text-muted">
               A Under Control nasceu em {siteConfig.foundingYear} com o objetivo de auxiliar
               empresários, empreendedores, profissionais da área da saúde e qualquer outro
@@ -74,34 +75,46 @@ export default function SobrePage() {
               À frente da operação está {siteConfig.ceo.name}, {siteConfig.ceo.role.toLowerCase()},
               que atua com ampla experiência como secretária executiva. {siteConfig.ceo.bio}
             </p>
+            <p className="mt-6 border-l-2 border-gold pl-4 text-sm text-ink">
+              <span className="block font-display text-base font-semibold">{siteConfig.ceo.name}</span>
+              {siteConfig.ceo.role}
+            </p>
           </div>
+        </Container>
+      </section>
+
+      <section className="bg-surface-alt/40 py-16">
+        <Container className="grid gap-10 lg:grid-cols-[1fr_1.4fr] lg:gap-16">
           <div>
             <SectionHeading title="Missão" />
             <p className="mt-4 text-base leading-relaxed text-muted">
               Devolver tempo de qualidade para quem confia na Under Control, cuidando das tarefas
               administrativas e pessoais com eficiência, personalização e profissionalismo.
             </p>
-            <div className="mt-8">
-              <SectionHeading title="Diferenciais" />
-              <ul className="mt-4 space-y-3">
-                {[
-                  "Escopo de atendimento sob medida para cada cliente",
-                  "Atendimento humano, sem respostas automáticas",
-                  "Flexibilidade sem os custos de uma contratação CLT",
-                  "Acompanhamento contínuo da rotina delegada",
-                ].map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-base text-ink">
-                    <span aria-hidden="true" className="mt-1 text-gold-dark">✓</span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
+          </div>
+          <div>
+            <SectionHeading title="Diferenciais" />
+            <ul className="mt-4 grid gap-4 sm:grid-cols-2">
+              {[
+                "Escopo de atendimento sob medida para cada cliente",
+                "Atendimento humano, sem respostas automáticas",
+                "Flexibilidade sem os custos de uma contratação CLT",
+                "Acompanhamento contínuo da rotina delegada",
+              ].map((item) => (
+                <li
+                  key={item}
+                  className="flex items-start gap-3 rounded-2xl border border-border-soft/60 bg-surface p-5 text-base text-ink"
+                >
+                  <span aria-hidden="true" className="mt-0.5 text-gold-dark">✓</span>
+                  {item}
+                </li>
+              ))}
+            </ul>
           </div>
         </Container>
       </section>
 
-      <section className="bg-surface-alt/40 py-16">
+      <section className="bg-cream py-16">
         <Container>
           <SectionHeading eyebrow="O que nos guia" title="Nossos" emphasis="valores." align="center" />
           <div className="mt-10 grid gap-5 sm:grid-cols-3">
