@@ -93,14 +93,9 @@ que a empresa as disponibilizar — hoje ela renderiza um estado vazio honesto.
 
 ## Formulário de contato
 
-O formulário (`src/components/ui/ContactForm.tsx`) envia para `POST /api/contact`
-(`src/app/api/contact/route.ts`), que:
-
-- valida campos obrigatórios e formato de e-mail;
-- aplica um honeypot anti-spam (campo `company` oculto);
-- aplica rate limiting simples por IP (`src/lib/rateLimit.ts`);
-- encaminha o lead para `CRM_WEBHOOK_URL` quando configurado, ou apenas registra no log do
-  servidor caso a variável esteja vazia — pronto para plugar um CRM real no futuro.
+O formulário (`src/components/ui/ContactForm.tsx`) não usa backend: ao enviar, abre o WhatsApp
+da empresa (`siteConfig.whatsapp`) com os dados preenchidos já na mensagem. Mantém um honeypot
+anti-spam (campo `company` oculto).
 
 ## Analytics
 
