@@ -34,12 +34,12 @@ export function Hero() {
         <div className="relative">
           <div className="relative aspect-[4/5] w-full overflow-hidden rounded-3xl ring-1 ring-white/10">
             <Image
-              src="/images/hero-assistant.png"
-              alt="Assistente remota da Under Control organizando a rotina de um executivo"
+              src="/images/about-juliana.jpg"
+              alt={`${siteConfig.ceo.name}, ${siteConfig.ceo.role.toLowerCase()} da Under Control`}
               fill
               priority
               sizes="(min-width: 1024px) 45vw, 100vw"
-              className="object-cover object-[78%_center]"
+              className="object-cover object-center"
             />
           </div>
           <div className="absolute -bottom-6 left-1/2 w-[calc(100%-2rem)] -translate-x-1/2 rounded-2xl bg-surface p-5 shadow-[0_20px_40px_rgba(0,0,0,0.25)] sm:w-72">
