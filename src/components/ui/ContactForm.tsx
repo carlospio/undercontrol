@@ -60,8 +60,7 @@ export function ContactForm({ tone = "dark" }: { tone?: "dark" | "light" }) {
       `*WhatsApp:* ${String(data.get("whatsapp") ?? "")}`,
       `*Profissão/segmento:* ${segment}`,
       `*Mensagem:* ${String(data.get("message") ?? "")}`,
-    ].join("
-");
+    ].join("\n");
 
     const whatsappUrl = `${siteConfig.whatsapp.url}&text=${encodeURIComponent(text)}`;
     const opened = window.open(whatsappUrl, "_blank", "noopener,noreferrer");
