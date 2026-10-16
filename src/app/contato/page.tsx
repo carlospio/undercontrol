@@ -22,7 +22,6 @@ const contactDetails = [
     value: `${siteConfig.address.street}, ${siteConfig.address.neighborhood} — ${siteConfig.address.city}/${siteConfig.address.state}, CEP ${siteConfig.address.zipCode}`,
     href: siteConfig.address.mapUrl,
   },
-  { label: "Atendimento", value: siteConfig.businessHours },
 ];
 
 export default function ContatoPage() {

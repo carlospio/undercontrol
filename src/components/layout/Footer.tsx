@@ -85,7 +85,6 @@ export function Footer() {
                 {siteConfig.address.street}, {siteConfig.address.neighborhood} · {siteConfig.address.city}/{siteConfig.address.state}
               </a>
             </p>
-            <p>{siteConfig.businessHours}</p>
           </div>
           <div className="flex flex-wrap items-center gap-4">
             {navigation.footer.legal.map((item) => (

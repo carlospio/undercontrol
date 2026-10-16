@@ -53,7 +53,6 @@ export function LocalBusinessJsonLd() {
       addressCountry: siteConfig.address.country,
     },
     hasMap: siteConfig.address.mapUrl,
-    openingHours: "Mo-Fr 09:00-18:00",
   };
 
   return <JsonLdScript data={data} />;

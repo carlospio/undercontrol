@@ -56,9 +56,4 @@ export const generalFaq: FaqItem[] = [
     answer:
       "O atendimento acontece pelos canais que você já utiliza — telefone, WhatsApp e e-mail — seguindo o escopo e o fluxo de trabalho definidos durante o onboarding.",
   },
-  {
-    question: "Qual é o horário de atendimento?",
-    answer:
-      "A Under Control atende de segunda a sexta, das 9h às 18h.",
-  },
 ];

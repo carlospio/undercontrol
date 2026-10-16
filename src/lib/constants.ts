@@ -32,7 +32,6 @@ export const siteConfig = {
     country: "BR",
     mapUrl: "https://share.google/FNJXidYGGcvUXICCl",
   },
-  businessHours: "Segunda a sexta, das 9h às 18h",
   social: {
     instagram: "https://www.instagram.com/under_control_assistant/",
     // TODO: confirmar URLs oficiais de Facebook e LinkedIn antes de publicar
