@@ -112,7 +112,6 @@ Ver [`.env.example`](./.env.example). Nenhum arquivo `.env*` deve ser commitado.
 - [ ] Preencher `NEXT_PUBLIC_SITE_URL` com o domínio de produção
 - [ ] Confirmar `NEXT_PUBLIC_WHATSAPP_NUMBER` e `NEXT_PUBLIC_PHONE`
 - [ ] Configurar `NEXT_PUBLIC_GTM_ID` (ou remover o bloco de GTM do layout, se não for usado)
-- [ ] Configurar `CRM_WEBHOOK_URL` quando houver integração real de CRM
 - [ ] Confirmar URLs de Facebook/LinkedIn em `src/lib/constants.ts` (hoje em branco)
 - [ ] Revisar juridicamente `/politica-de-privacidade` (texto atual é um esqueleto com `TODO`s)
 - [ ] Substituir imagens placeholder (hero, sobre, og-default.png, logo.png, ícone) por assets
