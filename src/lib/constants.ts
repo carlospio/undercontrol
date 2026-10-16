@@ -30,7 +30,7 @@ export const siteConfig = {
     state: "SP",
     zipCode: "06454-000",
     country: "BR",
-    mapUrl: "https://share.google/FNJXidYGGcvUXICCl",
+    mapUrl: "https://share.google/81yVCdZBz3P4k9QNp",
   },
   social: {
     instagram: "https://www.instagram.com/under_control_assistant/",

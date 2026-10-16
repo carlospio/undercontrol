@@ -1,6 +1,7 @@
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
+import { MapEmbed } from "@/components/ui/MapEmbed";
 import { ContactForm } from "@/components/ui/ContactForm";
 import { LocalBusinessJsonLd } from "@/components/seo/JsonLd";
 import { siteConfig } from "@/lib/constants";
@@ -70,6 +71,7 @@ export default function ContatoPage() {
                 </div>
               ))}
             </dl>
+            <MapEmbed className="mt-8 text-gold-dark" />
           </div>
           <div className="rounded-2xl border border-border-soft/60 bg-surface p-6 sm:p-8">
             <ContactForm tone="dark" />

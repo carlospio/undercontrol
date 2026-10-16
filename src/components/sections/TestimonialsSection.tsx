@@ -9,10 +9,28 @@ export interface Testimonial {
   date?: string;
 }
 
-// Nenhum depoimento verificado disponível no momento — não inventar avaliações.
-// Assim que a empresa disponibilizar avaliações reais (Google, clientes, etc.),
-// adicione os itens aqui e o layout renderiza automaticamente.
-const testimonials: Testimonial[] = [];
+// TODO: PLACEHOLDER — depoimentos fictícios, apenas para preencher o layout.
+// Substituir por avaliações reais (Google, clientes, etc.) antes de divulgar o site.
+const testimonials: Testimonial[] = [
+  {
+    author: "Cliente Exemplo 1",
+    role: "Empresária",
+    quote:
+      "Depoimento de exemplo: a rotina ficou muito mais organizada e hoje sobra tempo para o que realmente importa.",
+  },
+  {
+    author: "Cliente Exemplo 2",
+    role: "Profissional da saúde",
+    quote:
+      "Depoimento de exemplo: atendimento humano, discreto e sempre pontual. Recomendo sem hesitar.",
+  },
+  {
+    author: "Cliente Exemplo 3",
+    role: "Empreendedor",
+    quote:
+      "Depoimento de exemplo: delegar as tarefas administrativas foi a melhor decisão para o meu negócio.",
+  },
+];
 
 function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
   return (

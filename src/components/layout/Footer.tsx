@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Container } from "@/components/ui/Container";
+import { MapEmbed } from "@/components/ui/MapEmbed";
 import { siteConfig, navigation } from "@/lib/constants";
 import { services } from "@/data/services";
 import { solutions } from "@/data/solutions";
@@ -69,6 +70,10 @@ export function Footer() {
             ))}
           </ul>
         </div>
+      </Container>
+
+      <Container className="pb-12">
+        <MapEmbed className="text-white/80 hover:[&_a]:text-gold" />
       </Container>
 
       <div className="border-t border-white/10">
