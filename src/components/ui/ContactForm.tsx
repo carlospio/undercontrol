@@ -2,7 +2,6 @@
 
 import { useRef, useState } from "react";
 import { trackEvent } from "@/lib/analytics";
-import { siteConfig } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 
 const segments = [
@@ -17,10 +16,11 @@ const segments = [
   "Outro",
 ];
 
-type FormState = "idle" | "success";
+type FormState = "idle" | "loading" | "success" | "error";
 
 export function ContactForm({ tone = "dark" }: { tone?: "dark" | "light" }) {
   const [state, setState] = useState<FormState>("idle");
+  const [errorMessage, setErrorMessage] = useState("");
   const startedRef = useRef(false);
   const isLight = tone === "light";
 
@@ -40,37 +40,43 @@ export function ContactForm({ tone = "dark" }: { tone?: "dark" | "light" }) {
     }
   }
 
-  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    setState("loading");
+    setErrorMessage("");
+
     const form = event.currentTarget;
     const data = new FormData(form);
+    const payload = {
+      name: String(data.get("name") ?? ""),
+      email: String(data.get("email") ?? ""),
+      whatsapp: String(data.get("whatsapp") ?? ""),
+      segment: String(data.get("segment") ?? ""),
+      message: String(data.get("message") ?? ""),
+      company: String(data.get("company") ?? ""),
+    };
 
-    // Honeypot preenchido: spam. Finge sucesso sem abrir o WhatsApp.
-    if (data.get("company")) {
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      const result = await response.json();
+
+      if (!response.ok) {
+        setState("error");
+        setErrorMessage(result.error ?? "Não foi possível enviar. Tente novamente.");
+        return;
+      }
+
+      trackEvent("form_submit", { form: "contato", segment: payload.segment });
       setState("success");
-      return;
+      form.reset();
+    } catch {
+      setState("error");
+      setErrorMessage("Não foi possível enviar. Verifique sua conexão e tente novamente.");
     }
-
-    const segment = String(data.get("segment") ?? "");
-    const text = [
-      "Olá! Vim pelo site da Under Control e gostaria de conversar.",
-      "",
-      `*Nome:* ${String(data.get("name") ?? "")}`,
-      `*E-mail:* ${String(data.get("email") ?? "")}`,
-      `*WhatsApp:* ${String(data.get("whatsapp") ?? "")}`,
-      `*Profissão/segmento:* ${segment}`,
-      `*Mensagem:* ${String(data.get("message") ?? "")}`,
-    ].join("\n");
-
-    const whatsappUrl = `${siteConfig.whatsapp.url}&text=${encodeURIComponent(text)}`;
-    const opened = window.open(whatsappUrl, "_blank", "noopener,noreferrer");
-    if (!opened) {
-      window.location.href = whatsappUrl;
-    }
-
-    trackEvent("form_submit", { form: "contato", segment });
-    setState("success");
-    form.reset();
   }
 
   if (state === "success") {
@@ -82,9 +88,9 @@ export function ContactForm({ tone = "dark" }: { tone?: "dark" | "light" }) {
           isLight ? "border-white/15 bg-white/10 text-white" : "border-border-soft bg-surface text-ink"
         )}
       >
-        <p className="font-display text-xl font-semibold">Quase lá!</p>
+        <p className="font-display text-xl font-semibold">Mensagem enviada!</p>
         <p className={cn("mt-2 text-sm", isLight ? "text-white/76" : "text-muted")}>
-          Abrimos o WhatsApp com a sua mensagem pronta. É só enviar para falar com a nossa equipe.
+          Nossa equipe vai entrar em contato em breve. Se preferir, fale agora mesmo pelo WhatsApp.
         </p>
       </div>
     );
@@ -174,11 +180,18 @@ export function ContactForm({ tone = "dark" }: { tone?: "dark" | "light" }) {
         className="hidden"
       />
 
+      {state === "error" ? (
+        <p role="alert" className="text-sm font-semibold text-red-500">
+          {errorMessage}
+        </p>
+      ) : null}
+
       <button
         type="submit"
-        className="w-full rounded-full bg-gold px-6 py-3 text-sm font-bold text-ink transition-opacity hover:opacity-90"
+        disabled={state === "loading"}
+        className="w-full rounded-full bg-gold px-6 py-3 text-sm font-bold text-ink transition-opacity hover:opacity-90 disabled:opacity-60"
       >
-        Quero conversar sem compromisso
+        {state === "loading" ? "Enviando..." : "Quero conversar sem compromisso"}
       </button>
     </form>
   );
