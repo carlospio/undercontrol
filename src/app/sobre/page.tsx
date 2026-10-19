@@ -23,7 +23,7 @@ const values = [
   {
     title: "Discrição e confiança",
     description:
-      "A equipe atua como uma extensão da sua operação, com discrição no trato de informações e compromissos sensíveis.",
+      "A equipe atua como uma extensão da sua operação, com discrição no trato de informações e compromissos sensíveis, formalizada em termo de confidencialidade.",
   },
   {
     title: "Profissionalismo",

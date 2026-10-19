@@ -8,7 +8,7 @@ export const solutions: Solution[] = [
     shortDescription:
       "Agenda, viagens, cotações, documentos e as pequenas demandas que consomem grandes blocos do seu dia.",
     intro:
-      "Empresários e executivos lidam com decisões estratégicas todos os dias — mas também com uma quantidade grande de tarefas operacionais que não precisariam passar por eles.",
+      "Empresários e executivos lidam com decisões estratégicas todos os dias — mas também com uma quantidade grande de tarefas operacionais que não precisariam ser passadas por eles.",
     problems: [
       "O celular interrompe reuniões e decisões importantes",
       "A agenda depende só da sua memória",
@@ -16,7 +16,7 @@ export const solutions: Solution[] = [
       "Contatos e fornecedores ficam sem retorno no momento certo",
     ],
     howUnderControlHelps:
-      "A Under Control organiza sua agenda, atendimento e demandas administrativas, funcionando como uma extensão da sua operação. Assim, você mantém o foco nas decisões que exigem a sua atenção direta.",
+      "A Under Control organiza sua agenda, atendimentos e demandas administrativas, funcionando como uma extensão da sua operação. Assim, você mantém o foco nas decisões que exigem a sua atenção direta.",
     relatedServices: [
       "assistente-remota",
       "gestao-de-agenda",

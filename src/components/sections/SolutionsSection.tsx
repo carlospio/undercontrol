@@ -8,7 +8,7 @@ export function SolutionsSection() {
     <section className="bg-cream py-20">
       <Container>
         <SectionHeading
-          eyebrow="Para quem é a Under Control"
+          eyebrow="Para quem é a Under Control:"
           title="Uma rotina organizada para"
           emphasis="cada tipo de profissional."
           align="center"
