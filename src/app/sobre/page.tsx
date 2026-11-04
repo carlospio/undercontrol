@@ -72,8 +72,8 @@ export default function SobrePage() {
               dos seus negócios e aproveitando mais tempo com a família e amigos.
             </p>
             <p className="mt-4 text-base leading-relaxed text-muted">
-              À frente da operação está {siteConfig.ceo.name}, {siteConfig.ceo.role.toLowerCase()},
-              que atua com ampla experiência como secretária executiva. {siteConfig.ceo.bio}
+              À frente da operação está {siteConfig.ceo.name}, {siteConfig.ceo.role.toLowerCase()}.{" "}
+              {siteConfig.ceo.bio}
             </p>
             <p className="mt-6 border-l-2 border-gold pl-4 text-sm text-ink">
               <span className="block font-display text-base font-semibold">{siteConfig.ceo.name}</span>
