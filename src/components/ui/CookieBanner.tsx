@@ -5,6 +5,12 @@ import Link from "next/link";
 import Script from "next/script";
 import { siteConfig } from "@/lib/constants";
 
+declare global {
+  interface Window {
+    gtag?: (...args: unknown[]) => void;
+  }
+}
+
 const STORAGE_KEY = "uc-cookie-consent";
 
 type Consent = "accepted" | "rejected" | null;
@@ -34,6 +40,9 @@ export function CookieBanner() {
     } catch {
       // sem localStorage: a escolha vale apenas para esta visita
     }
+    window.gtag?.("consent", "update", {
+      analytics_storage: value === "accepted" ? "granted" : "denied",
+    });
     setConsent(value);
   }
 
@@ -41,9 +50,20 @@ export function CookieBanner() {
 
   return (
     <>
-      {consent === "accepted" && gtmId ? (
+      {gtmId ? (
         <Script id="gtm-init" strategy="afterInteractive">
           {`
+            window.dataLayer = window.dataLayer || [];
+            window.gtag = function(){ window.dataLayer.push(arguments); };
+            var granted = false;
+            try { granted = window.localStorage.getItem('${STORAGE_KEY}') === 'accepted'; } catch (e) {}
+            window.gtag('consent', 'default', {
+              ad_storage: 'denied',
+              ad_user_data: 'denied',
+              ad_personalization: 'denied',
+              analytics_storage: granted ? 'granted' : 'denied',
+              wait_for_update: 500
+            });
             (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
             new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
             j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
